@@ -10,16 +10,14 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
+
 @Entity
 public class Book {
 	@Id 
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	private String title;
-	private long year;
-	private String author;
-	private long isbn;
-	private long price;
+	private String title, author;
+	private Integer year, isbn, price;
 	
     @ManyToOne
     @JsonIgnore
@@ -30,7 +28,7 @@ public class Book {
 		super();
 	}
 	
-	public Book(String title, long year, String author, long isbn, long price, Category category) {
+	public Book(String title, Integer year, String author, Integer isbn, Integer price, Category category) {
 		this.title = title;
 		this.year = year;
 		this.author = author;
@@ -56,7 +54,7 @@ public class Book {
 	public long getYear() {
 		return year;
 	}
-	public void setYear(long year) {
+	public void setYear(Integer year) {
 		this.year = year;
 	}
 	public String getAuthor() {
@@ -68,20 +66,20 @@ public class Book {
 	public long getIsbn() {
 		return isbn;
 	}
-	public void setIsbn(long isbn) {
+	public void setIsbn(Integer isbn) {
 		this.isbn = isbn;
 	}
 	public long getPrice() {
 		return price;
 	}
-	public void setPrice(long price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
 	public Category getCategory() {
 		return category;
 	}
 
-	public void setDepartment(Category category) {
+	public void setCategory(Category category) {
 		this.category = category;
 	}
 	

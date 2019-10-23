@@ -35,8 +35,8 @@ public class BookstoreApplication {
 			brepository.save(new Book("Katy's", 1989, "kate", 5678, 12, crepository.findByName("Fantasy").get(0)));	
 			
 			log.info("fetch all books");
-			for (Book books : brepository.findAll()) {
-				log.info(books.toString());
+			for (Book book : brepository.findAll()) {
+				log.info(book.toString());
 			}
 
 		};
